@@ -8,21 +8,21 @@ describe('04-date-tasks', () => {
     () => {
       assert.equal(
         tasks.parseDataFromRfc2822('December 17, 1995 03:24:00').valueOf(),
-        new Date(1995, 11, 17, 3, 24, 0).valueOf()
+        new Date(1995, 11, 17, 3, 24, 0).valueOf(),
       );
 
       assert.equal(
         tasks.parseDataFromRfc2822('Tue, 26 Jan 2016 13:48:02 GMT').valueOf(),
-        1453816082000
+        1453816082000,
       );
 
       assert.equal(
         tasks
           .parseDataFromRfc2822('Sun, 17 May 1998 03:00:00 GMT+0100')
           .valueOf(),
-        895370400000
+        895370400000,
       );
-    }
+    },
   );
 
   it.optional(
@@ -30,14 +30,14 @@ describe('04-date-tasks', () => {
     () => {
       assert.equal(
         tasks.parseDataFromIso8601('2016-01-19T16:07:37+00:00').valueOf(),
-        1453219657000
+        1453219657000,
       );
 
       assert.equal(
         tasks.parseDataFromIso8601('2016-01-19T08:07:37Z').valueOf(),
-        1453190857000
+        1453190857000,
       );
-    }
+    },
   );
 
   it.optional('isLeapYear should true if specified year is leap', () => {
@@ -82,10 +82,10 @@ describe('04-date-tasks', () => {
       ].forEach((data) => {
         assert.equal(
           tasks.timeSpanToString(data.startDate, data.endDate),
-          data.expected
+          data.expected,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -133,11 +133,11 @@ describe('04-date-tasks', () => {
           tasks.angleBetweenClockHands(new Date(data.date)),
           data.expected,
           `Incorrect result for angleBetweenClockHands(${new Date(
-            data.date
-          ).toUTCString()}):`
+            data.date,
+          ).toUTCString()}):`,
         );
       });
-    }
+    },
   );
 
   it.optional('getDay should return the string representation corresponding date of the year as a string "Month, day"', () => {

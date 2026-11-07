@@ -29,7 +29,7 @@ describe('09-functions-n-closures-tasks', () => {
         const actual = tasks.getComposition(data.f, data.g);
         assert(actual(data.arg) === data.result);
       });
-    }
+    },
   );
 
   it.optional(
@@ -44,7 +44,7 @@ describe('09-functions-n-closures-tasks', () => {
       for (let i = 0; i < 10; i += 1) {
         assert.equal(power05(i), i ** 0.5);
       }
-    }
+    },
   );
 
   it.optional(
@@ -80,7 +80,7 @@ describe('09-functions-n-closures-tasks', () => {
           assert(test.y === data.polynom(test.x));
         });
       });
-    }
+    },
   );
 
   it.optional('memoize method should cache the result of function', () => {
@@ -94,19 +94,19 @@ describe('09-functions-n-closures-tasks', () => {
     assert.equal(
       numberOfCalls,
       1,
-      'memoize result should evaluate the specified function at first call'
+      'memoize result should evaluate the specified function at first call',
     );
     for (let i = 0; i < 10; i += 1) {
       const actual = memoizer();
       assert.equal(
         actual,
         expected,
-        'memoize result should return the cached value at second and next calls'
+        'memoize result should return the cached value at second and next calls',
       );
       assert.equal(
         numberOfCalls,
         1,
-        'memoize result should not evaluate the specified function at second and next calls'
+        'memoize result should not evaluate the specified function at second and next calls',
       );
     }
   });
@@ -126,7 +126,7 @@ describe('09-functions-n-closures-tasks', () => {
 
       const actual = tasks.retry(fn, maxAttemps)();
       assert.equal(actual, expected);
-    }
+    },
   );
 
   it.optional(
@@ -144,14 +144,14 @@ describe('09-functions-n-closures-tasks', () => {
       assert.equal(
         actual,
         -1,
-        'logger function should return the original result from specified function'
+        'logger function should return the original result from specified function',
       );
       assert.equal(
         log,
         'cos(3.141592653589793) starts\n' + 'cos(3.141592653589793) ends\n',
-        'logger function shoud log the start and end of the specified function'
+        'logger function shoud log the start and end of the specified function',
       );
-    }
+    },
   );
 
   it.optional(
@@ -164,7 +164,7 @@ describe('09-functions-n-closures-tasks', () => {
         assert.equal(
           log,
           'testLogger(["expected","test",1],0) starts\n',
-          'logger function shoud log the start of specified function before calling'
+          'logger function shoud log the start of specified function before calling',
         );
         isCalling = true;
         return param[index];
@@ -181,20 +181,20 @@ describe('09-functions-n-closures-tasks', () => {
       assert.equal(
         isCalling,
         true,
-        'logger function should call the specified function'
+        'logger function should call the specified function',
       );
       assert.equal(
         actual,
         'expected',
-        'logger function should return the original result from specified function'
+        'logger function should return the original result from specified function',
       );
       assert.equal(
         log,
-        'testLogger(["expected","test",1],0) starts\n' +
-          'testLogger(["expected","test",1],0) ends\n',
-        'logger function shoud log the end of specified function after calling'
+        'testLogger(["expected","test",1],0) starts\n'
+          + 'testLogger(["expected","test",1],0) ends\n',
+        'logger function shoud log the end of specified function after calling',
       );
-    }
+    },
   );
 
   it.optional(
@@ -204,24 +204,24 @@ describe('09-functions-n-closures-tasks', () => {
       assert.equal(
         tasks.partialUsingArguments(fn, 'a')('b', 'c', 'd'),
         'abcd',
-        "partialUsingArguments(fn, 'a')('b','c','d')' should return 'abcd'"
+        "partialUsingArguments(fn, 'a')('b','c','d')' should return 'abcd'",
       );
       assert.equal(
         tasks.partialUsingArguments(fn, 'a', 'b')('c', 'd'),
         'abcd',
-        "partialUsingArguments(fn, 'a','b')('c','d')' should return 'abcd'"
+        "partialUsingArguments(fn, 'a','b')('c','d')' should return 'abcd'",
       );
       assert.equal(
         tasks.partialUsingArguments(fn, 'a', 'b', 'c')('d'),
         'abcd',
-        "partialUsingArguments(fn, 'a','b','c')('d') should return 'abcd'"
+        "partialUsingArguments(fn, 'a','b','c')('d') should return 'abcd'",
       );
       assert.equal(
         tasks.partialUsingArguments(fn, 'a', 'b', 'c', 'd')(),
         'abcd',
-        "partialUsingArguments(fn, 'a','b','c','d')()' should return 'abcd'"
+        "partialUsingArguments(fn, 'a','b','c','d')()' should return 'abcd'",
       );
-    }
+    },
   );
 
   it.optional(
@@ -238,6 +238,6 @@ describe('09-functions-n-closures-tasks', () => {
         assert.equal(f10(), 10 + i);
         assert.equal(f20(), 20 + i);
       }
-    }
+    },
   );
 });

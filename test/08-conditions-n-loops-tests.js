@@ -15,7 +15,7 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           num,
-          `getFizzBuzz shoud return ${num} for ${num}, but actually ${actual}`
+          `getFizzBuzz shoud return ${num} for ${num}, but actually ${actual}`,
         );
       });
 
@@ -27,7 +27,7 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           'Fizz',
-          `getFizzBuzz shoud return 'Fizz' for ${num}, but actually ${actual}`
+          `getFizzBuzz shoud return 'Fizz' for ${num}, but actually ${actual}`,
         );
       });
 
@@ -37,9 +37,9 @@ describe('08-conditions-n-loops-tasks', () => {
           assert.equal(
             actual,
             'Buzz',
-            `getFizzBuzz shoud return 'Buzz' for ${num}, but actually ${actual}`
+            `getFizzBuzz shoud return 'Buzz' for ${num}, but actually ${actual}`,
           );
-        }
+        },
       );
 
       [15, 30, 45, 60, 75, 90].forEach((num) => {
@@ -47,10 +47,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           'FizzBuzz',
-          `getFizzBuzz shoud return 'FizzBuzz' for ${num}, but actually ${actual}`
+          `getFizzBuzz shoud return 'FizzBuzz' for ${num}, but actually ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -65,10 +65,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `${data.n}! = ${data.expected}, but actual ${actual}`
+          `${data.n}! = ${data.expected}, but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -83,10 +83,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `Sum of [${data.n1},${data.n2}] = ${data.expected}, but actual ${actual}`
+          `Sum of [${data.n1},${data.n2}] = ${data.expected}, but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional('isTriangle should check if triangle can be built', () => {
@@ -107,14 +107,14 @@ describe('08-conditions-n-loops-tasks', () => {
         const actual = tasks.isTriangle(
           data.sides[idx[0]],
           data.sides[idx[1]],
-          data.sides[idx[2]]
+          data.sides[idx[2]],
         );
         assert.equal(
           actual,
           data.expected,
           `Triangle from [${data.sides.toString()}]: expected ${
             data.expected
-          } but actual ${actual}`
+          } but actual ${actual}`,
         );
       });
     });
@@ -234,11 +234,11 @@ describe('08-conditions-n-loops-tasks', () => {
           tasks.doRectanglesOverlap(data.rect1, data.rect2),
           data.expected,
           `doRectanglesOverlap(\n   ${JSON.stringify(
-            data.rect1
-          )},\n   ${JSON.stringify(data.rect2)}\n): expected ${data.expected}`
+            data.rect1,
+          )},\n   ${JSON.stringify(data.rect2)}\n): expected ${data.expected}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -285,11 +285,11 @@ describe('08-conditions-n-loops-tasks', () => {
           tasks.isInsideCircle(data.circle, data.point),
           data.expected,
           `isInsideCircle(\n   ${JSON.stringify(
-            data.circle
-          )},\n   ${JSON.stringify(data.point)}\n): expected ${data.expected}`
+            data.circle,
+          )},\n   ${JSON.stringify(data.point)}\n): expected ${data.expected}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -304,10 +304,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `First single char of '${data.str}' = '${data.expected}', but actual '${actual}'`
+          `First single char of '${data.str}' = '${data.expected}', but actual '${actual}'`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -354,15 +354,15 @@ describe('08-conditions-n-loops-tasks', () => {
           data.a,
           data.b,
           data.isStartIncluded,
-          data.isEndIncluded
+          data.isEndIncluded,
         );
         assert.equal(
           actual,
           data.expected,
-          `getIntervalString(${data.a}, ${data.b}, ${data.isStartIncluded}, ${data.isEndIncluded}) shoud return '${data.expected}', but actually '${actual}'`
+          `getIntervalString(${data.a}, ${data.b}, ${data.isStartIncluded}, ${data.isEndIncluded}) shoud return '${data.expected}', but actually '${actual}'`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -381,10 +381,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `Reversed '${data.str}' = '${data.expected}', but actual '${actual}'`
+          `Reversed '${data.str}' = '${data.expected}', but actual '${actual}'`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -400,10 +400,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `Reversed ${data.num} = ${data.expected}, but actual ${actual}`
+          `Reversed ${data.num} = ${data.expected}, but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional('isCreditCardNumber should validate CCN', () => {
@@ -417,7 +417,7 @@ describe('08-conditions-n-loops-tasks', () => {
     ].forEach((ccn) => {
       assert(
         tasks.isCreditCardNumber(ccn),
-        `CCN ${ccn} is valid, but actually not`
+        `CCN ${ccn} is valid, but actually not`,
       );
     });
 
@@ -427,7 +427,7 @@ describe('08-conditions-n-loops-tasks', () => {
     ].forEach((ccn) => {
       assert(
         tasks.isCreditCardNumber(ccn) === false,
-        `CCN ${ccn} is not valid, but actually yes`
+        `CCN ${ccn} is not valid, but actually yes`,
       );
     });
   });
@@ -445,10 +445,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `GetDigitalRoot(${data.num}) = ${data.expected}, but actual ${actual}`
+          `GetDigitalRoot(${data.num}) = ${data.expected}, but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional('isBracketsBalanced should check the balanced brackets', () => {
@@ -469,7 +469,7 @@ describe('08-conditions-n-loops-tasks', () => {
     ].forEach((str) => {
       assert(
         tasks.isBracketsBalanced(str),
-        `'${str}' has balanced brackets, but actually not`
+        `'${str}' has balanced brackets, but actually not`,
       );
     });
 
@@ -492,7 +492,7 @@ describe('08-conditions-n-loops-tasks', () => {
     ].forEach((str) => {
       assert(
         tasks.isBracketsBalanced(str) === false,
-        `'${str}' has unbalanced brackets, but actually yes`
+        `'${str}' has unbalanced brackets, but actually yes`,
       );
     });
   });
@@ -516,10 +516,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `${data.num} with radix ${data.n} = ${data.expected}, but actual ${actual}`
+          `${data.num} with radix ${data.n} = ${data.expected}, but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -551,10 +551,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.equal(
           actual,
           data.expected,
-          `Common directory path fo [${data.pathes}] = ${data.expected}, but actual ${actual}`
+          `Common directory path fo [${data.pathes}] = ${data.expected}, but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -588,10 +588,10 @@ describe('08-conditions-n-loops-tasks', () => {
         assert.deepEqual(
           actual,
           data.expected,
-          `Product of [${data.m1}] x [${data.m2}] = [${data.expected}], but actual ${actual}`
+          `Product of [${data.m1}] x [${data.m2}] = [${data.expected}], but actual ${actual}`,
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -660,8 +660,8 @@ describe('08-conditions-n-loops-tasks', () => {
           actual,
           X,
           `Position: \n${positionToSting(
-            data
-          )}\n  The winner is X, but actually '${actual}'`
+            data,
+          )}\n  The winner is X, but actually '${actual}'`,
         );
       });
 
@@ -712,8 +712,8 @@ describe('08-conditions-n-loops-tasks', () => {
           actual,
           O,
           `Position: \n${positionToSting(
-            data
-          )}\n  The winner is O, but actually '${actual}'`
+            data,
+          )}\n  The winner is O, but actually '${actual}'`,
         );
       });
 
@@ -749,10 +749,10 @@ describe('08-conditions-n-loops-tasks', () => {
           actual,
           undefined,
           `Position: \n${positionToSting(
-            data
-          )}\n  The winner is undefined, but actually '${actual}'`
+            data,
+          )}\n  The winner is undefined, but actually '${actual}'`,
         );
       });
-    }
+    },
   );
 });

@@ -14,7 +14,7 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.getCircleCircumference(5), 31.41592653589793);
       assert.equal(tasks.getCircleCircumference(3.14), 19.729201864543903);
       assert.equal(tasks.getCircleCircumference(0), 0);
-    }
+    },
   );
 
   it.optional('getAverage should return an average of two numbers', () => {
@@ -23,11 +23,11 @@ describe('02-numbers-tasks', () => {
     assert.equal(tasks.getAverage(-3, 3), 0);
     assert.equal(
       tasks.getAverage(Number.MAX_VALUE - 2, Number.MAX_VALUE),
-      Number.MAX_VALUE - 1
+      Number.MAX_VALUE - 1,
     );
     assert.equal(
       tasks.getAverage(Number.MAX_VALUE, -Number.MAX_VALUE / 2),
-      Number.MAX_VALUE / 4
+      Number.MAX_VALUE / 4,
     );
   });
 
@@ -38,9 +38,9 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.getDistanceBetweenPoints(0, 0, 1, 0), 1);
       assert.equal(
         tasks.getDistanceBetweenPoints(-5, 0, 10, -10),
-        18.027756377319946
+        18.027756377319946,
       );
-    }
+    },
   );
 
   it.optional(
@@ -49,7 +49,7 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.getLinearEquationRoot(5, -10), 2);
       assert.equal(tasks.getLinearEquationRoot(1, 8), -8);
       assert.equal(tasks.getLinearEquationRoot(5, 0), 0);
-    }
+    },
   );
 
   it.optional(
@@ -59,7 +59,7 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.getAngleBetweenVectors(0, 1, 0, -1), Math.PI);
       assert.equal(tasks.getAngleBetweenVectors(0, -1, 1, 0), Math.PI / 2);
       assert.equal(tasks.getAngleBetweenVectors(0, 1, 0, 1), 0);
-    }
+    },
   );
 
   it.optional('getLastDigit should return a last digit of the number', () => {
@@ -75,7 +75,7 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.parseNumberFromString('100'), 100);
       assert.equal(tasks.parseNumberFromString('37'), 37);
       assert.equal(tasks.parseNumberFromString('-525.5'), -525.5);
-    }
+    },
   );
 
   it.optional(
@@ -84,7 +84,7 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.getParallelepipedDiagonal(1, 1, 1), Math.sqrt(3));
       assert.equal(tasks.getParallelepipedDiagonal(3, 3, 3), Math.sqrt(27));
       assert.equal(tasks.getParallelepipedDiagonal(1, 2, 3), Math.sqrt(14));
-    }
+    },
   );
 
   it.optional(
@@ -99,7 +99,7 @@ describe('02-numbers-tasks', () => {
       assert.equal(tasks.roundToPowerOfTen(9678, 1), 9680);
       assert.equal(tasks.roundToPowerOfTen(9678, 2), 9700);
       assert.equal(tasks.roundToPowerOfTen(9678, 3), 10000);
-    }
+    },
   );
 
   it.optional('isPrime should return true if specified number is prime', () => {
@@ -129,6 +129,6 @@ describe('02-numbers-tasks', () => {
       // eslint-disable-next-line no-new-wrappers
       assert.equal(tasks.toNumber(new Number(42), 0), 42);
       assert.equal(tasks.toNumber(undefined, -1), -1);
-    }
+    },
   );
 });

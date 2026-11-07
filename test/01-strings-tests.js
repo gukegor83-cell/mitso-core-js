@@ -9,14 +9,14 @@ describe('01-strings-tasks', () => {
       assert.equal(tasks.concatenateStrings('aa', 'bb'), 'aabb');
       assert.equal(tasks.concatenateStrings('aa', ''), 'aa');
       assert.equal(tasks.concatenateStrings('', 'bb'), 'bb');
-    }
+    },
   );
 
   it.optional('getStringLength should return the length of string', () => {
     assert.equal(
       tasks.getStringLength('aaaaa'),
       5,
-      "'aaaaa' length should be 5"
+      "'aaaaa' length should be 5",
     );
     assert.equal(tasks.getStringLength(''), 0, "'' length should be 0");
   });
@@ -26,13 +26,13 @@ describe('01-strings-tasks', () => {
     () => {
       assert.equal(
         tasks.getStringFromTemplate('John', 'Doe'),
-        'Hello, John Doe!'
+        'Hello, John Doe!',
       );
       assert.equal(
         tasks.getStringFromTemplate('Chuck', 'Norris'),
-        'Hello, Chuck Norris!'
+        'Hello, Chuck Norris!',
       );
-    }
+    },
   );
 
   it.optional(
@@ -40,7 +40,7 @@ describe('01-strings-tasks', () => {
     () => {
       assert.equal(tasks.getFirstChar('John Doe'), 'J');
       assert.equal(tasks.getFirstChar('cat'), 'c');
-    }
+    },
   );
 
   it.optional(
@@ -48,13 +48,13 @@ describe('01-strings-tasks', () => {
     () => {
       assert.equal(
         tasks.extractNameFromTemplate('Hello, John Doe!'),
-        'John Doe'
+        'John Doe',
       );
       assert.equal(
         tasks.extractNameFromTemplate('Hello, Chuck Norris!'),
-        'Chuck Norris'
+        'Chuck Norris',
       );
-    }
+    },
   );
 
   it.optional(
@@ -62,14 +62,14 @@ describe('01-strings-tasks', () => {
     () => {
       assert.equal(
         tasks.removeLeadingAndTrailingWhitespaces('  Abracadabra'),
-        'Abracadabra'
+        'Abracadabra',
       );
       assert.equal(tasks.removeLeadingAndTrailingWhitespaces('cat'), 'cat');
       assert.equal(
         tasks.removeLeadingAndTrailingWhitespaces('\tHello, World! '),
-        'Hello, World!'
+        'Hello, World!',
       );
-    }
+    },
   );
 
   it.optional(
@@ -77,7 +77,7 @@ describe('01-strings-tasks', () => {
     () => {
       assert.equal(tasks.repeatString('A', 5), 'AAAAA');
       assert.equal(tasks.repeatString('cat', 3), 'catcatcat');
-    }
+    },
   );
 
   it.optional(
@@ -85,14 +85,14 @@ describe('01-strings-tasks', () => {
     () => {
       assert.equal(
         tasks.removeFirstOccurrences('To be or not to be', ' not'),
-        'To be or to be'
+        'To be or to be',
       );
       assert.equal(
         tasks.removeFirstOccurrences('I like legends', 'end'),
-        'I like legs'
+        'I like legs',
       );
       assert.equal(tasks.removeFirstOccurrences('ABABAB', 'BA'), 'ABAB');
-    }
+    },
   );
 
   it.optional(
@@ -101,7 +101,7 @@ describe('01-strings-tasks', () => {
       assert.equal(tasks.unbracketTag('<div>'), 'div');
       assert.equal(tasks.unbracketTag('<span>'), 'span');
       assert.equal(tasks.unbracketTag('<a>'), 'a');
-    }
+    },
   );
 
   it.optional(
@@ -110,9 +110,9 @@ describe('01-strings-tasks', () => {
       assert.equal(tasks.convertToUpperCase('Thunderstruck'), 'THUNDERSTRUCK');
       assert.equal(
         tasks.convertToUpperCase('abcdefghijklmnopqrstuvwxyz'),
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
       );
-    }
+    },
   );
 
   it.optional(
@@ -120,18 +120,18 @@ describe('01-strings-tasks', () => {
     () => {
       assert.deepEqual(
         tasks.extractEmails(
-          'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
+          'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com',
         ),
         [
           'angus.young@gmail.com',
           'brian.johnson@hotmail.com',
           'bon.scott@yahoo.com',
-        ]
+        ],
       );
       assert.deepEqual(tasks.extractEmails('info@gmail.com'), [
         'info@gmail.com',
       ]);
-    }
+    },
   );
 
   it.optional(
@@ -140,19 +140,19 @@ describe('01-strings-tasks', () => {
       assert.equal(
         tasks.getRectangleString(6, 4),
         // eslint-disable-next-line indent
-        '┌────┐\n' + '│    │\n' + '│    │\n' + '└────┘\n'
+        '┌────┐\n' + '│    │\n' + '│    │\n' + '└────┘\n',
       );
       assert.deepEqual(
         tasks.getRectangleString(2, 2),
         // eslint-disable-next-line indent
-        '┌┐\n' + '└┘\n'
+        '┌┐\n' + '└┘\n',
       );
       assert.deepEqual(
         tasks.getRectangleString(12, 3),
         // eslint-disable-next-line indent
-        '┌──────────┐\n' + '│          │\n' + '└──────────┘\n'
+        '┌──────────┐\n' + '│          │\n' + '└──────────┘\n',
       );
-    }
+    },
   );
 
   it.optional(
@@ -161,19 +161,19 @@ describe('01-strings-tasks', () => {
       assert.equal(tasks.encodeToRot13('hello'), 'uryyb');
       assert.equal(
         tasks.encodeToRot13('Why did the chicken cross the road?'),
-        'Jul qvq gur puvpxra pebff gur ebnq?'
+        'Jul qvq gur puvpxra pebff gur ebnq?',
       );
       assert.equal(
         tasks.encodeToRot13('Gb trg gb gur bgure fvqr!'),
-        'To get to the other side!'
+        'To get to the other side!',
       );
       assert.equal(
         tasks.encodeToRot13(
-          'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+          'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
         ),
-        'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+        'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm',
       );
-    }
+    },
   );
 
   it.optional('isString should return true if argument is a string', () => {
@@ -185,7 +185,7 @@ describe('01-strings-tasks', () => {
     assert.equal(
       tasks.isString(new String('test')),
       true,
-      "new String('test')"
+      "new String('test')",
     );
   });
 
@@ -249,9 +249,9 @@ describe('01-strings-tasks', () => {
         assert.equal(
           tasks.getCardId(val),
           index,
-          `Invalid id for card '${val}':`
+          `Invalid id for card '${val}':`,
         );
       });
-    }
+    },
   );
 });

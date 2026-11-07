@@ -12,42 +12,42 @@ describe('06-objects-tasks', () => {
       assert.equal(
         typeof rect,
         'object',
-        'Result of Rectangle constructor should be an object'
+        'Result of Rectangle constructor should be an object',
       );
       assert(
         Object.prototype.hasOwnProperty.call(rect, 'width'),
-        'Result of Rectangle constructor should be an object with "width" property'
+        'Result of Rectangle constructor should be an object with "width" property',
       );
       assert.equal(
         rect.width,
         10,
-        'Result of new Rectangle(10,20) should be an object with "width" property equals to 10'
+        'Result of new Rectangle(10,20) should be an object with "width" property equals to 10',
       );
       assert(
         Object.prototype.hasOwnProperty.call(rect, 'height'),
-        'Result of new Rectangle(10,20) should be an object with "height" property'
+        'Result of new Rectangle(10,20) should be an object with "height" property',
       );
       assert.equal(
         rect.width,
         10,
-        'Result of new Rectangle(10,20) should be an object with "height" property equals to 20'
+        'Result of new Rectangle(10,20) should be an object with "height" property equals to 20',
       );
       assert.equal(
         typeof rect.getArea,
         'function',
-        'Result of Rectangle constructor should be an object with "getArea" method'
+        'Result of Rectangle constructor should be an object with "getArea" method',
       );
       assert.equal(
         rect.getArea(),
         200,
-        'Result of (new Rectangle(10,20)).getArea() should return the correct area of specified rectangle'
+        'Result of (new Rectangle(10,20)).getArea() should return the correct area of specified rectangle',
       );
       assert.equal(
         new tasks.Rectangle(3, 8).getArea(),
         24,
-        'Result of (new Rectangle(3,8)).getArea() should return the correct area of specified rectangle'
+        'Result of (new Rectangle(3,8)).getArea() should return the correct area of specified rectangle',
       );
-    }
+    },
   );
 
   it.optional(
@@ -65,7 +65,7 @@ describe('06-objects-tasks', () => {
       ].forEach((data) => {
         assert.equal(tasks.getJSON(data.obj), data.expected);
       });
-    }
+    },
   );
 
   it.optional(
@@ -101,17 +101,17 @@ describe('06-objects-tasks', () => {
         assert.deepEqual(
           actual,
           data.expected,
-          'fromJson method shoud restore all properties from json'
+          'fromJson method shoud restore all properties from json',
         );
         assert.equal(
           // eslint-disable-next-line no-proto
           actual.__proto__,
           // eslint-disable-next-line no-proto
           data.expected.__proto__,
-          'fromJson method shoud restore type from prototype argument'
+          'fromJson method shoud restore type from prototype argument',
         );
       });
-    }
+    },
   );
 
   it.optional(
@@ -127,14 +127,14 @@ describe('06-objects-tasks', () => {
       assert.equal(builder.pseudoClass('invalid').stringify(), ':invalid');
       assert.equal(
         builder.pseudoElement('first-letter').stringify(),
-        '::first-letter'
+        '::first-letter',
       );
 
       // Test complex selectors
       assert.equal(builder.element('li').id('main').stringify(), 'li#main');
       assert.equal(
         builder.element('div').class('container').stringify(),
-        'div.container'
+        'div.container',
       );
       assert.equal(
         builder
@@ -142,15 +142,15 @@ describe('06-objects-tasks', () => {
           .class('container')
           .class('clickable')
           .stringify(),
-        'div.container.clickable'
+        'div.container.clickable',
       );
       assert.equal(
         builder.id('main').class('container').class('editable').stringify(),
-        '#main.container.editable'
+        '#main.container.editable',
       );
       assert.equal(
         builder.element('li').id('home-menu').class('active').stringify(),
-        'li#home-menu.active'
+        'li#home-menu.active',
       );
       assert.equal(
         builder
@@ -158,7 +158,7 @@ describe('06-objects-tasks', () => {
           .class('nav-bar')
           .class('navbar-inverted')
           .stringify(),
-        '.container.nav-bar.navbar-inverted'
+        '.container.nav-bar.navbar-inverted',
       );
       assert.equal(
         builder
@@ -166,7 +166,7 @@ describe('06-objects-tasks', () => {
           .attr('href$=".png"')
           .pseudoClass('focus')
           .stringify(),
-        'a[href$=".png"]:focus'
+        'a[href$=".png"]:focus',
       );
       assert.equal(
         builder
@@ -174,7 +174,7 @@ describe('06-objects-tasks', () => {
           .pseudoClass('first-of-type')
           .pseudoElement('first-letter')
           .stringify(),
-        'p:first-of-type::first-letter'
+        'p:first-of-type::first-letter',
       );
       assert.equal(
         builder
@@ -182,7 +182,7 @@ describe('06-objects-tasks', () => {
           .pseudoClass('focus')
           .pseudoClass('invalid')
           .stringify(),
-        'input:focus:invalid'
+        'input:focus:invalid',
       );
 
       // Test combined selectors
@@ -191,10 +191,10 @@ describe('06-objects-tasks', () => {
           .combine(
             builder.element('p').pseudoClass('focus'),
             '>',
-            builder.element('a').attr('href$=".png"')
+            builder.element('a').attr('href$=".png"'),
           )
           .stringify(),
-        'p:focus > a[href$=".png"]'
+        'p:focus > a[href$=".png"]',
       );
 
       assert.equal(
@@ -202,10 +202,10 @@ describe('06-objects-tasks', () => {
           .combine(
             builder.element('p').id('introduction'),
             '~',
-            builder.element('img').attr('href$=".png"')
+            builder.element('img').attr('href$=".png"'),
           )
           .stringify(),
-        'p#introduction ~ img[href$=".png"]'
+        'p#introduction ~ img[href$=".png"]',
       );
 
       assert.equal(
@@ -213,10 +213,10 @@ describe('06-objects-tasks', () => {
           .combine(
             builder.id('charter1').class('touch'),
             '+',
-            builder.element('table')
+            builder.element('table'),
           )
           .stringify(),
-        '#charter1.touch + table'
+        '#charter1.touch + table',
       );
 
       assert.equal(
@@ -224,10 +224,10 @@ describe('06-objects-tasks', () => {
           .combine(
             builder.element('ul').class('animable'),
             ' ',
-            builder.element('li').pseudoClass('nth-of-type(1)')
+            builder.element('li').pseudoClass('nth-of-type(1)'),
           )
           .stringify(),
-        'ul.animable   li:nth-of-type(1)'
+        'ul.animable   li:nth-of-type(1)',
       );
 
       assert.equal(
@@ -245,12 +245,12 @@ describe('06-objects-tasks', () => {
               builder.combine(
                 builder.element('tr').pseudoClass('nth-of-type(even)'),
                 ' ',
-                builder.element('td').pseudoClass('nth-of-type(even)')
-              )
-            )
+                builder.element('td').pseudoClass('nth-of-type(even)'),
+              ),
+            ),
           )
           .stringify(),
-        'div#main.container.draggable + table#data ~ tr:nth-of-type(even)   td:nth-of-type(even)'
+        'div#main.container.draggable + table#data ~ tr:nth-of-type(even)   td:nth-of-type(even)',
       );
 
       // Test validation
@@ -263,8 +263,8 @@ describe('06-objects-tasks', () => {
           fn,
           /Element, id and pseudo-element should not occur more then one time inside the selector/,
 
-          '\nPlease throw an exception "Element, id and pseudo-element should not occur more then one time inside the selector" ' +
-            'if element, id or pseudo-element occurs twice or more times'
+          '\nPlease throw an exception "Element, id and pseudo-element should not occur more then one time inside the selector" '
+            + 'if element, id or pseudo-element occurs twice or more times',
         );
       });
 
@@ -275,7 +275,7 @@ describe('06-objects-tasks', () => {
       ].forEach((fn) => {
         assert.doesNotThrow(
           fn,
-          /Element, id and pseudo-element should not occur more then one time inside the selector/
+          /Element, id and pseudo-element should not occur more then one time inside the selector/,
         );
       });
 
@@ -291,10 +291,10 @@ describe('06-objects-tasks', () => {
           fn,
           /Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element/,
 
-          '\nPlease throw an exception "Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element" ' +
-            'if selector parts arranged in an invalid order.'
+          '\nPlease throw an exception "Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element" '
+            + 'if selector parts arranged in an invalid order.',
         );
       });
-    }
+    },
   );
 });

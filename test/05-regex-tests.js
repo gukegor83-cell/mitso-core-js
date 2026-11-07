@@ -41,9 +41,9 @@ describe('05-regex-tasks', () => {
 
       assert(
         result.source.length < 13,
-        `regexp length should be < 13, actual ${result.source.length} `
+        `regexp length should be < 13, actual ${result.source.length} `,
       );
-    }
+    },
   );
 
   it.optional(
@@ -75,8 +75,8 @@ describe('05-regex-tasks', () => {
 
       assert(
         !'abcdABCD1234'.match(tasks.getPasswordValidator(20)),
-        'Password validator do not validate minLength restriction'
+        'Password validator do not validate minLength restriction',
       );
-    }
+    },
   );
 });
